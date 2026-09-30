@@ -150,6 +150,10 @@ select distinct
 		else 'Team Account' end as account_record_type
 	, losing_account_external_ids as Losing_Account_External_Ids__c 
 	, domains.domain_list
+-- DAR
+	, analytics.data_accounts.dar_trailing_3_months as DAR_Trailing_3_Months__c
+	, analytics.data_accounts.dar_trailing_90_days as DAR_Trailing_90_Days__c
+	, analytics.data_accounts.dar_best_3_months as DAR_Best_Consecutive_3Mo_Last_12Mo__c
 -- route planner
 	, to_varchar(convert_timezone('UTC', analytics.MART_ROUTE_PLANNER_TRIALS.TRIAL_STARTED_AT), 'YYYY-MM-DD"T"HH24:MI:SS.FF3"Z"') as Route_Planner_Trial_Started_At__c
 from analytics.data_accounts
