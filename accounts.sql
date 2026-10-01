@@ -140,6 +140,7 @@ select distinct
 	, analytics.serviceability_v4.truck_grade as Trucks_Grade__c
 -- churn risk
     , analytics.int_account_churn_risk.priority_score as Churn_Priority_Score__c
+	, analytics.int_account_churn_risk.activity_bucket as Churn_Activity_Bucket__c
     , analytics.int_account_churn_risk.REVENUE_LAST_90_DAYS as Churn_Revenue_Last_90_Days__c
     , analytics.int_account_churn_risk.REVENUE_PRIOR_90_DAYS as Churn_Revenue_Prior_90_Day_Period__c
     , analytics.int_account_churn_risk.PCT_CHANGE_LAST90_VS_PRIOR90 as Percent_Revenue_Change_Last_90_Prior_90__c
