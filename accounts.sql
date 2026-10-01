@@ -21,10 +21,11 @@ with
 	)
 select distinct
 --	account basics
-	analytics.data_accounts.account_external_id as pk
+	-- location_id includes fabricated integration branches and maps to Salesforce's existing external-ID field.
+	analytics.data_accounts.location_id as pk
 	, parent.external_id as parent_account_external_id
     , analytics.data_accounts.root_account_external_id as ultimate_parent_account_external_id
-	, analytics.data_accounts.account_external_id as Account_External_ID__c
+	, analytics.data_accounts.location_id as Account_External_ID__c
 	, analytics.data_accounts.account_type as Account_Type__c
 	, left(
 		case 
